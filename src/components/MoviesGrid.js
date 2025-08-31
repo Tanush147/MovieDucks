@@ -1,0 +1,30 @@
+import react, { useEffect, useState } from "react";
+import "../styles.css";
+
+export default function MoviesGrid() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("movies.json")
+      .then((response) => response.json())
+      .then((data) => setMovies(data));
+  }, []);
+  return (
+    <>
+      <div className="movies-grid">
+        {
+        movies.map((movies) => (
+          <div key={movies.id} className="movie-card">
+            <img src={`images/${movies.image}`} alt={movies.title} />
+            <div className="movie-card-info">
+              <h3 className="movie-card-title">{movies.title}</h3>
+              <p className="movie-card-genre">{movies.genre}</p>
+              <p className="movie-card-rating">{movies.rating}</p>
+            </div>
+          </div>
+        ))
+        }
+      </div>
+    </>
+  );
+}
