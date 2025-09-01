@@ -13,7 +13,7 @@ export default function MoviesGrid() {
     <>
       <div className="movies-grid">
         {
-        movies.map((movies) => (
+        movies.map( (movies) => (
           <div key={movies.id} className="movie-card">
             <img src={`images/${movies.image}`} alt={movies.title} />
             <div className="movie-card-info">
