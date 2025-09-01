@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <>
       <footer className="footer">
-        <p className="footer-text">copyright {currentYear} MovieDucks all right reserved </p>
+        <p className="footer-text">copyright {currentYear} Tanush all right reserved </p>
       </footer>
     </>
   );
